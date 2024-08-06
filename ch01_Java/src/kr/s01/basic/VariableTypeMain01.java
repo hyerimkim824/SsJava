@@ -58,6 +58,11 @@ public class VariableTypeMain01 {
 		double d1 = 9.8;
 		System.out.println("d1 = "+d1);
 		
+		System.out.println("====문자열 표시====");
+		//문자열 표시(기본 자료형이 아님, 참조 자료형)
+		String str = "Hello World";
+		System.out.println("str = "+str);
+		
 	}
 
 }
