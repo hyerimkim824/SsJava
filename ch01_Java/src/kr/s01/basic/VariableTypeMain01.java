@@ -63,6 +63,12 @@ public class VariableTypeMain01 {
 		String str = "Hello World";
 		System.out.println("str = "+str);
 		
+		String str5 = "이름\t나이\t취미";
+		System.out.println(str5);
+		
+		
+		
+		
 	}
 
 }

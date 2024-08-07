@@ -11,7 +11,8 @@ public class PrintMain08 {
 		 * 예금자, 송금되기전 잔금, 송금된 금액, 송금이후 잔금, 내일 입금될 이자를 출력하시오.
 		 */
 		
-		System.out.println("==========실습=========");
+		System.out.println("=========실습=========");
+		System.out.println("예금자 : 유재석");
 		
 		int num1=1000;
 		System.out.printf("송금 되기 전 잔금 : %,d원%n",num1);
@@ -23,7 +24,9 @@ public class PrintMain08 {
 		System.out.printf("송금 이후 잔금 : %,d원%n",num3);
 		
 		double num4=397.5;
-		System.out.printf("송금 이후 잔금 : %,.1f원%n",num4);
+		System.out.printf("내일 입금될 이자 : %,.1f원%n",num4);
+		
+		// d : 정수형, f : 실수형-> 굵직굵직한 자료형을 의미함
 		
 		
 		

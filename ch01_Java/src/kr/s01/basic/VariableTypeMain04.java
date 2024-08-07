@@ -11,6 +11,24 @@ public class VariableTypeMain04 {
 		//int->byte 깅제 형변환
 		
 		System.out.println(result1);
+		
+		short s1 = 32767;
+		short s2 = 32767;
+		short result2 = (short)(s1+s2);//int->short 강제 형변환
+		System.out.println(result2);
+		
+		int in1 = 123;
+		double du1 = 456.67;
+		int result3 = in1 + (int)du1; //double -> int 강제 형변환
+		System.out.println(result3);
+		
+		int in2 = 123;
+		long lg2 = 567L;
+		int result4 = in2 + (int)lg2;//long->int 강제 형변환
+		System.out.println(result4);
+		
 	}
 
 }
+
+

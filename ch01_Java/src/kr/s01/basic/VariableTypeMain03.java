@@ -14,17 +14,24 @@ public class VariableTypeMain03 {
 		short s2 = 32767;
 		
 		int result2 = s1+s2; //32bit미만의 자료형 데이터를 연산하면 자료형이 32bit(int)로 변환됨
-		System.out.print(result2);
+		System.out.println(result2);
 		
 		int in1 = 1234;
 		long lg1 = 5678L;
 		long result3 = in1 +lg1; //in1 : int -> long 자동 형변환
-		System.out.print(result3);
+		System.out.println(result3);
 		
 		int in2 =1234;
 		double du2 = 345.567;
 		double result4 = in2+du2;//in2 : int -> double 자동 형변환
 		System.out.println(result4);
+		
+		int in3 = 123;
+		long lg3 = 567L;
+		int result5 = in3 +(int)lg3; //long->int 강제 형변환
+		System.out.println(result5);
+		
+
 		
 		//
 		

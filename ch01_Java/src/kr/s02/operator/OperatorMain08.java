@@ -33,8 +33,9 @@ public class OperatorMain08 {
 		int d, e;
 		d = e =10;
 		
-		boolean f = ++d > e++ || d++ >= ++e;
-		            //11  10
+		boolean f = ++d < e++ || d++ >= ++e;
+		            //11  10     11     12
+		System.out.println(d+","+e);
 		System.out.println(f);		
 		
 		
