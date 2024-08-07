@@ -27,6 +27,20 @@ public class VariableTypeMain04 {
 		int result4 = in2 + (int)lg2;//long->int 강제 형변환
 		System.out.println(result4);
 		
+		int in3 = 567;
+		float ft3 = 123.467f;
+		in3 +=ft3; //왼쪽에 있는 자료형에 맞춘다
+		System.out.println("in +=ft3 : "+in3); //소숫점이 없다. 즉 자동적으로 형변환이 되었다.
+		
+		//산술 연산자 사용시 명시적으로 형변환
+		int in4 = 567;
+		float ft4 = 123.567f;
+		int result5 = in4+(int)ft4;
+		System.out.println("result5 = "+result5);
+		
+		
+		
+		
 	}
 
 }
