@@ -21,10 +21,10 @@ public class OperatorMain13 {
 		String str= input.nextLine();
 		
 		
-		System.out.print("단가 입력 :");
+		System.out.print("단가 입력 : ");
 		int num1 = input.nextInt(); //단가 input
 		
-		System.out.print("판매 수량 입력 :");
+		System.out.print("판매 수량 입력 : ");
 		int num2 = input.nextInt(); //판매 수량 input
 		
 		double total = (num1*num2)*0.85;
