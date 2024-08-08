@@ -57,7 +57,6 @@ public class OperationMain19 {
 		System.out.println();
 		System.out.println("만 나이는 "+result);
 		
-		//d
 		
 		input.close();
 	
