@@ -28,7 +28,7 @@ public class OperatorMain12 {
 		System.out.println("마지막 자릿수를 제외한 값 = " + num2);	
 		System.out.println("마지막 자릿수 = " + num3);	
 		
-		
+			
 		
 		input.close();
 	
