@@ -25,17 +25,19 @@ public class OperationMain04 {
 		int num1 = input.nextInt();
 		System.out.print("두번째 정수 :");
 		int num2 = input.nextInt();
+				
 		
+		//단일 if문에서 다중if로 바꿈
 		if(num1>num2) {
 			System.out.printf("최대값 : %d%n", num1);
 			System.out.printf("최소값 : %d%n", num2);
 			}
 		
-		if(num1<num2) {
+		else if(num1<num2) {
 			System.out.printf("최대값 : %d%n", num2);
 			System.out.printf("최대값 : %d%n", num1);
 			}
-		if(num1==num2){
+		else {
 			System.out.print("두 수는 같다");
 		}
 		
