@@ -20,20 +20,24 @@ public class OperationMain04 {
 		 */
 		java.util.Scanner input = 
 				new java.util.Scanner(System.in);
+		
 		System.out.print("첫번째 정수 :");
 		int num1 = input.nextInt();
 		System.out.print("두번째 정수 :");
 		int num2 = input.nextInt();
 		
-		if(num1>num2)
+		if(num1>num2) {
 			System.out.printf("최대값 : %d%n", num1);
-		else
-			System.out.printf("최소값 : %d%n", num1);
-		
-		if(num2>num1)
-			System.out.printf("최대값 : %d%n", num2);
-		else
 			System.out.printf("최소값 : %d%n", num2);
+			}
+		
+		if(num1<num2) {
+			System.out.printf("최대값 : %d%n", num2);
+			System.out.printf("최대값 : %d%n", num1);
+			}
+		if(num1==num2){
+			System.out.print("두 수는 같다");
+		}
 		
 		
 		input.close();
