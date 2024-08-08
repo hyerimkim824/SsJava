@@ -32,7 +32,6 @@ public class OperationMain04 {
 			System.out.printf("최대값 : %d%n", num1);
 			System.out.printf("최소값 : %d%n", num2);
 			}
-		
 		else if(num1<num2) {
 			System.out.printf("최대값 : %d%n", num2);
 			System.out.printf("최대값 : %d%n", num1);

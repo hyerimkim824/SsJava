@@ -36,7 +36,6 @@ public class OperationMain08 {
 		
 		input.close();
 		
-	
 		
 		
 	}
