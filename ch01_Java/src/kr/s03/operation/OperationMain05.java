@@ -24,7 +24,7 @@ public class OperationMain05 {
 		else {
 			System.out.println("0입니다.");
 			
-		//git test
+		
 			
 		input.close();
 		}

@@ -38,7 +38,7 @@ public class OperationMain06 {
 		}
 		System.out.println("성적 : "+score);
 		System.out.println("등급 : "+grade);
-		
+		//
 		
 		input.close();
 		

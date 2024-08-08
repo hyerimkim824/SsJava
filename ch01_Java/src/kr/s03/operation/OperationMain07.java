@@ -25,7 +25,8 @@ public class OperationMain07 {
 		if(e==f) {//e : char->int로 형변환 되어 65로 인식
 			System.out.println("'A'는 65와 같다.");
 		}
-		
+		//형변환이 안되는 경우에는 강제로 형변환을 해서 자료형을 맞춰줘야한다.
+		//
 			
 		}
 	}
