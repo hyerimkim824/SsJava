@@ -60,7 +60,7 @@ public class OperationMain19 {
 		
 		input.close();
 		
-		//d
+		
 	
 	}
 }
