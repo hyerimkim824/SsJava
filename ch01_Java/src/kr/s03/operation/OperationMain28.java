@@ -76,9 +76,7 @@ public class OperationMain28 {
 			payment = input.nextInt();
 		}
 		
-		
-		input.close();
-		
+		input.close();	
 		
 	}
 
