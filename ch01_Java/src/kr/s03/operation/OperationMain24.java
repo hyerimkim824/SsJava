@@ -38,15 +38,15 @@ public class OperationMain24 {
 	
 		int i = 0;
 		while(i<=num) {
-			
-			
+					
 			System.out.println(num-i); //거꾸로 출력
 			
 			i++;
-			
 		}
 		
 		input.close();
+		
+		
 	}
 
 }
