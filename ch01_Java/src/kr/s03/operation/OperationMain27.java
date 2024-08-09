@@ -21,12 +21,19 @@ public class OperationMain27 {
 			int num = input.nextInt();
 			
 			if(num ==1) {//예금
+				System.out.print("예금액 :");
+				
+				balance += input.nextInt();			
 				
 			}
 			else if(num ==2) {//출금
+				System.out.print("출금액 :");
+				balance -= input.nextInt();
 				
 			}
 			else if(num ==3) {//잔고확인
+				
+				System.out.print("잔고확인 "+balance);
 				
 			}
 			else if(num ==4) {//종료
@@ -37,7 +44,7 @@ public class OperationMain27 {
 				
 			}
 			else {
-				System.out.println("잘못 입력 했습니다.");
+				System.out.println("잘못 입력 했습니다.");//다시 메뉴를 보여줌
 			}		
 			
 			
