@@ -13,8 +13,6 @@ public class OperationMain20 {
 						dan+"*"+i+" = "+dan*i);
 				
 			}
-		}
-		
+		}	
 	}
-
 }
