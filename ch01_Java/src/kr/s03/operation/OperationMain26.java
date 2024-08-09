@@ -9,7 +9,7 @@ public class OperationMain26 {
 		
 		System.out.println("0전까지 입력받은 정수로 합 구하기");
 		
-		while(true) {
+		while(true) {//메뉴 중심의 console 프로그램을 만들때 while문 활용
 			System.out.print("누적할 정수 입력 : ");
 			
 			a= input.nextInt();
@@ -20,13 +20,11 @@ public class OperationMain26 {
 				break;
 				
 			}
-			total +=a;
+			total +=a; //누적
 			
 		}
 		
 		System.out.println("total = "+total);
-		
-		
 		input.close();
 	}
 
