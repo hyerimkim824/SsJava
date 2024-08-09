@@ -120,10 +120,7 @@ public class OperationMain34 {
 				System.out.println();
 				System.out.println("******************");
 			
-				
-				
-				
-				
+				//
 				
 				
 			}else if(num==2) {
