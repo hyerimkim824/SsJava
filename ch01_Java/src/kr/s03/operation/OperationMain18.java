@@ -12,8 +12,7 @@ public class OperationMain18 {
 		for(int i=1; i<=9; i++) {
 			System.out.println(dan+"*"+i+"="+dan*i);
 		}
-		
-		
+			
 		input.close();
 	}
 
