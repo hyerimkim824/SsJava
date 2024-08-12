@@ -40,15 +40,8 @@ public class OperationMain04 {
 			System.out.print("두 수는 같다");
 		}
 		
-<<<<<<< HEAD
-		///
-=======
 		//
->>>>>>> refs/remotes/origin/main
-		
-		
-		input.close();
-		
+
 		
 	}
 
