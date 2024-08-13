@@ -31,10 +31,10 @@ public class MethodMain03 {
 	
 	public static void main(String[] args) {
 		
-		java.util.Scanner input = 
+		java.util.Scanner input = //입력 받을 Scanner 형성
 				new java.util.Scanner(System.in);
 		
-		MethodMain03 me = new MethodMain03();//객체 형셩
+		MethodMain03 me = new MethodMain03();//객체 생성
 		
 		System.out.print("요소의 수 : ");// 입력받는 요소의 수
 		int num = input.nextInt();
