@@ -40,16 +40,14 @@ public class OperationMain04 {
 			System.out.print("두 수는 같다");
 		}
 		
-<<<<<<< HEAD
+
 		//
 
-=======
-		
+
 		
 		input.close();
 		
->>>>>>> f6d23fd054e43953d6af37176359eb30ec726762
-		
+
 	}
 
 }
