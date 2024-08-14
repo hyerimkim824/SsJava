@@ -1,5 +1,8 @@
 package kr.s05.object.method;
+
+import java.util.*;
 	
+
 
 class Account{
 	
@@ -52,8 +55,8 @@ public class MethodMain08 {
 	
 	public static void main(String[] args) {
 		
-		java.util.Scanner input = //scanner 생성
-				new java.util.Scanner(System.in);
+		Scanner input = //scanner 생성
+				new Scanner(System.in);
 
 
 		//계좌 생성
@@ -91,7 +94,9 @@ public class MethodMain08 {
 		System.out.print("이름 입력 : ");
 		account.name = input.nextLine();
 		
-		account.balance = 0;
+		System.out.print("잔고 : ");
+		account.balance = input.nextInt();
+		
 		int input_money =0;
 		int input_num=0;
 		int output_money = 0;
@@ -99,7 +104,7 @@ public class MethodMain08 {
 		while(true) {
 			System.out.println();
 			//은행 코드
-			System.out.print("1.예금|2.출금|3.잔고확인|4.종료>>");
+			System.out.print("1.예금|2.출금|3.잔고확인|4.종료>>"); //메뉴 선택
 			input_num = input.nextInt();
 			
 			//예금
@@ -113,7 +118,7 @@ public class MethodMain08 {
 			}else if(input_num==2) {
 				System.out.print("출금 금액 : ");//출금 금액 입력
 				output_money = input.nextInt();
-				if((account.balance-output_money)<=0) {//출금 금액이 잔고보다 많아야 한다.
+				if((account.balance-output_money)<0) {//출금 금액이 잔고보다 많아야 한다.
 					System.out.println("계좌 잔고가 부족합니다");
 				}else {account.withraw(output_money);}//출금
 				
@@ -124,7 +129,7 @@ public class MethodMain08 {
 				System.out.println("종료되었습니다."); //종료
 				break;
 			}else {
-				System.out.println("잘못 입력 하셨습니다."); //처음 입력을 잘못 했을때
+				System.out.println("잘못 입력 하셨습니다."); //메뉴 선택을 잘못 했을때
 			}
 			
 		}

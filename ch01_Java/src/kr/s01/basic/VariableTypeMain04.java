@@ -1,4 +1,4 @@
-package kr.s01.basic;
+/*package kr.s01.basic;
 
 public class VariableTypeMain04 {
 	public static void main(String[] args) {
@@ -27,6 +27,6 @@ public class VariableTypeMain04 {
 	}
 }
 
-
+*/
 
 
