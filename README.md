@@ -10,4 +10,4 @@
 |5|1주차|8/10|조건문(while,do while, break, continue), 1D array|
 |6|2주차|8/12|2D array, 간단한 class|
 |7|2주차|8/13|class 변수, class method|
-|8|2주차|8/4|method, method의 여러 기능|
+|8|2주차|8/14|method, method의 여러 기능|
