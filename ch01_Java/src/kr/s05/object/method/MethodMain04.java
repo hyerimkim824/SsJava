@@ -62,7 +62,7 @@ public class MethodMain04 {
 		
 		input.close();
 		
-		//git 이클립스 ui 통해서 확인
+
 
 	}
 
