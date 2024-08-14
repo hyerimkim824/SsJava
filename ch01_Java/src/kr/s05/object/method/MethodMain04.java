@@ -61,6 +61,8 @@ public class MethodMain04 {
 		System.out.printf("가장 마른 사람의 몸무게는 %dkg 입니다.",me.minOf(x)); //method 이용해서		
 		
 		input.close();
+		
+		//git 이클립스 ui 통해서 확인
 
 	}
 
