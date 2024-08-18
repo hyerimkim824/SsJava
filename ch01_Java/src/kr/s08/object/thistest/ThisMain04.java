@@ -29,7 +29,7 @@ public class ThisMain04 {
 		ThisMain04 tm3 = new ThisMain04("강남");
 		
 		
-		//git test
+		//git test /
 		
 	}
 
