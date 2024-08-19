@@ -12,3 +12,4 @@
 |7|2주차|8/13|class 변수, class method|
 |8|2주차|8/14|method, method의 여러 기능|
 |9|2주차|8/16|this, this()|
+|10|3주차|8/19|class 상속|
