@@ -11,3 +11,4 @@
 |6|2주차|8/12|2D array, 간단한 class|
 |7|2주차|8/13|class 변수, class method|
 |8|2주차|8/14|method, method의 여러 기능|
+|9|2주차|8/16|this, this()|
