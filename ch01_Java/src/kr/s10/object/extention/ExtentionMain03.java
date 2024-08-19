@@ -4,7 +4,8 @@ package kr.s10.object.extention;
 
 class A{
 	int x =100;
-	private int y = 200; //은닉화-> 대리인 필요
+	private int y = 200;
+	//은닉화-> 대리인 필요(public method를 만들어 준다!)
 	public int getY() {
 		return y;
 	}
