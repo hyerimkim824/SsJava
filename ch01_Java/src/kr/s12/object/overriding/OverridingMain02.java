@@ -27,7 +27,7 @@ class Daugther extends Mother {
 public class OverridingMain02 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	
 		Son s = new Son();
 		System.out.println("아들은 " + s.getLunch() + "을 먹는다");
 		Daugther d = new Daugther();

@@ -25,6 +25,8 @@ public class SuperMain01 {
 		Daughter d = new Daughter();
 		System.out.println("딸은 오늘은 왠지"+d.getRice()+"이 벅고싶어졌습니다.");
 		
+		//부모에 있는 getLunch를 부르기 위해서는 super를 이용할 수 밖에 없다.
+		
 	}
 
 }
