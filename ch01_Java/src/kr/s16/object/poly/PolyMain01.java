@@ -24,7 +24,7 @@ public class PolyMain01 {
 		//System.out.println(p.b); //자료형이 부모타입이 되었을 때는 부를 수 없다.
 		
 		
-		Child ch2 =(Child)p;//부모 클래스 타입->자식 클래스 탕비 형변환
+		Child ch2 =(Child)p;//부모 클래스 타입->자식 클래스 타입 형변환
 		                    //다운캐스팅, 명시적으로 형변환
 		
 		System.out.println(ch2.a);
