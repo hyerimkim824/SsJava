@@ -49,6 +49,19 @@ class Computer extends Product{
 	}
 }
 
+class Audio extends Product{
+	
+	public Audio(){ 
+		//부모 클래스이 인자가 있는 생성자를 호출
+		super(300);//computer 가격 설정
+	}
+
+	@Override
+	public String getName() {
+		return "Audio";
+	}
+}
+
 
 class Buyer{
 	int money = 1000; //구매자 보유 금액
@@ -67,8 +80,8 @@ class Buyer{
 		money-=p.price;//보유 금액 차감
 		bonusPoint +=p.bonusPoint; //보너스 점수 누적
 		System.out.println(p.getName()+"을 구매 했습니다.");
-		System.out.println("현재 남은 돈은"+money+"만원입니다.");
-		System.out.println("현재 보너스점수는" + bonusPoint+"점입니다.");
+		System.out.println("현재 남은 돈은 "+money+"만원입니다.");
+		System.out.println("현재 보너스점수는 " + bonusPoint+"점입니다.");
 		
 		System.out.println("------------------------");
 		
@@ -85,10 +98,16 @@ public class PolyMain05 {
 		Buyer b = new Buyer();
 		Tv tv = new Tv();
 		Computer com = new Computer();
+		Audio a = new Audio();
 		
 		//상품 구매하기
 		b.buy(tv);// Tv->Product 자동적으로 형변환
 		b.buy(com); //Computer -> Product 자동적으로 형변환
+		b.buy(a);
+		
+		//공통의 자료형을 사용하고 싶을 때 부모 타입으로 형변환해서
+		//클래스는 자료형이 무한대다.
+		//형변환 하는 것은 상속 관계에서만 가능하다.
 		
 
 	}
