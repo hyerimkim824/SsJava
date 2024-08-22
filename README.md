@@ -13,3 +13,5 @@
 |8|2주차|8/14|method, method의 여러 기능|
 |9|2주차|8/16|this, this()|
 |10|3주차|8/19|class 상속|
+|11|3주차|8/20|여러 class 예시(e.g String, Random)|
+|12|3추차|8/21|class 실습, 다형성 일부|
