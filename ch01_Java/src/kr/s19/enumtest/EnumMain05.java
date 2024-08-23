@@ -10,6 +10,17 @@ enum Item2{
 	//위에 지정한 상수 값들을 저장하기 위한 공간
 	
 	private final int var;
+	int a;
+	
+	public void setTest(){
+		this.a =  10;
+	}
+	
+	public int getTest() {
+		return a;
+	}
+
+	
 	
 	//생성자
 	Item2(int var) {
@@ -31,6 +42,12 @@ public class EnumMain05 {
 		System.out.println(Item2.DEL.getVar());
 		System.out.println(Item2.SEARCH.getVar());
 		System.out.println(Item2.CANCEL.getVar());
+		
+		//Item2.setTset();
+		
+		//System.out.println(Item2.getTest());
+		
+		
 
 	}
 
