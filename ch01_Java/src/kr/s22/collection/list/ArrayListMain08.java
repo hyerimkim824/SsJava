@@ -1,7 +1,7 @@
 package kr.s22.collection.list;
 import java.util.ArrayList;
 
-public class ArrayListMain08 {
+/*public class ArrayListMain08 {
 	public static void main(String[] args) {
 		
 		ArrayList<CartItem> list = 
@@ -23,3 +23,4 @@ public class ArrayListMain08 {
 	
 
 }
+*/
