@@ -9,7 +9,7 @@ public class MethodMain05 {
 	int math;
 	
 	//멤버 메서드
-	//총점
+	//총점 
 	public int makeSum() {
 		return korean +english+math;
 	}
