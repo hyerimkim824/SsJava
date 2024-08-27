@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="kr/s01/basic/" kind="src" path="ch01_Java/src"/>
+	<classpathentry kind="src" path="ch01_Java/src/kr/s01/basic"/>
+	<classpathentry kind="src" path="practice_Hyerim/src"/>
+	<classpathentry kind="src" path="ssStudy_java/src"/>
+	<classpathentry kind="output" path="ch01_Java/bin"/>
+</classpath>
