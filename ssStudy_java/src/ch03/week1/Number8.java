@@ -13,9 +13,9 @@ public class Number8 {
 		
 		
 		Scanner input = new Scanner(System.in);
-		
+		System.out.println("=========================");
 		System.out.println("컴퓨터와 가위바위 보 게임을합니다. ");
-		
+		System.out.println("=========================");
 		while(true) {
 			
 			System.out.print("가위 바위 보!!>>");
@@ -37,7 +37,7 @@ public class Number8 {
 			System.out.print("사용자 = " +hand+", 컴퓨터 = "+ str[index]);
 			           //컴퓨터  //사람
  			int calNum = index-num;
-			/*
+ 			/*
 			 * 컴퓨터     사람      calNum  결과
 			 * 가위(0) - 바위(1)    -1      사람
 			 * 가위(0) -  보(2)    -2      컴퓨터
@@ -56,6 +56,8 @@ public class Number8 {
  			}else {
  				System.out.println(", 컴퓨터가 이겼습니다.");
  			}
+ 			
+ 			
  			
 			
 			
