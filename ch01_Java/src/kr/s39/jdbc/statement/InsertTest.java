@@ -28,7 +28,8 @@ public class InsertTest {
 			conn = DriverManager.getConnection(db_url,db_id,db_password);
 			
 			//SQL문 작성
-			sql ="INSERT INTO test1(id,age) VALUES ('blue',20)";
+			sql ="INSERT INTO test1(id,age) VALUES ('s''t',50)";
+			//보안을 위해서 이렇게 데이터를 직접 입력하는 것은 안좋다.
 			
 			//JDBC 수행 3단계 : Statement 객체 생성
 			stmt = conn.createStatement();
