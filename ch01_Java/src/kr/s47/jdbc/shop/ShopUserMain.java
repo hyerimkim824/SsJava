@@ -1,0 +1,81 @@
+package kr.s47.jdbc.shop;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class ShopUserMain {
+	private BufferedReader br;
+	private ShopDAO dao;
+	//생성자
+	public ShopUserMain() {
+		try {
+			br = new BufferedReader(
+					new InputStreamReader(System.in));
+			dao = new ShopDAO();
+			//메뉴 호출
+			callMenu();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			//자원정리
+			if(br!=null)try {br.close();}catch(IOException e) {}
+		}
+	}
+	//메뉴
+	public void callMenu()throws IOException{
+		while(true) {
+			System.out.print("1.회원가입,2.회원정보,3.상품구매,4.구매내역,5.종료>");
+			try {
+				int no = Integer.parseInt(br.readLine());
+				if(no == 1) {//회원가입
+					System.out.print("아이디:");
+					String cust_id = br.readLine();
+					System.out.print("이름:");
+					String cust_name = br.readLine();
+					System.out.print("주소:");
+					String cust_address = br.readLine();
+					System.out.print("전화번호:");
+					String cust_tel = br.readLine();
+					dao.insertCustomer(cust_id, cust_name, 
+							          cust_address, cust_tel);
+				}else if(no == 2) {//회원정보
+					//사용자가 id입력하면 본인의 회원 정보를 볼 수 있도록
+					System.out.print("아이디 : ");
+					String cust_id = br.readLine();
+					dao.selectDetailCustomer(cust_id);
+					
+				}else if(no == 3) {//상품구매
+					//상품 내역을 먼저 봐야한다.
+					dao.selectItems();
+					System.out.println("--------------------------");
+					System.out.println("구매할 상품번호 : ");
+					int item_num = Integer.parseInt(br.readLine());
+					System.out.println("아이디 : ");
+					String cust_id = br.readLine();
+					dao.insertOrder(item_num, cust_id);
+					
+				}else if(no == 4) {//구매내역
+					System.out.print("아이디 : ");
+					String cust_id = br.readLine();
+					dao.selectOrdersById(cust_id);
+					
+				}else if(no == 5) {//종료
+					System.out.println("프로그램 종료");
+					break;
+				}else {
+					System.out.println("잘못 입력했습니다.");
+				}
+			}catch(NumberFormatException e) {
+				System.out.println("[숫자만 입력 가능]");
+			}
+		}
+	}
+	public static void main(String[] args) {
+		new ShopUserMain();
+	}
+}
+
+
+
+
