@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>목록</title>
+    </head>
+    <body>
+
+        <h3> 순서없는 목록
+            <ul>
+                <li>유치원</li>
+                <li>초등학교</li>
+                <li>중학교</li>
+                <li>고등학교</li>
+                <li>대학교</li>
+                </li>
+            </ul>
+            <ul type="circle">
+                <li>자바</li>
+                <li>JSP</li>
+                <li>Spring</li>
+            </ul>
+
+                <h3> 순서있는 목록
+            <ol>
+                <li>유치원</li>
+                <li>초등학교</li>
+                <li>중학교</li>
+                <li>고등학교</li>
+                <li>대학교</li>
+            </ol>
+            <!--역순으로-->
+            <ol reversed="reversed">
+                <li>자동차</li>
+                <li>컴퓨터</li>
+                <li>냉장고</li>
+            
+            </ol>
+            <!--type 속성을 이용해서 순서 표시를 숫자, 문자 지정 가능-->
+            <ol type="1">
+                <li>월요일</li>
+                <li>화요일</li>
+                <li>수요일</li>
+            
+            </ol>
+
+             <ol type="A">
+                <li>월요일</li>
+                <li>화요일</li>
+                <li>수요일</li>
+            
+            </ol>
+
+            <ol type="a">
+                <li>월요일</li>
+                <li>화요일</li>
+                <li>수요일</li>
+            
+            </ol>
+
+            <ol type="I">
+                <li>월요일</li>
+                <li>화요일</li>
+                <li>수요일</li>
+                <li>목요일</li>
+                <li>금요일</li>
+                <li>토요일</li>
+            
+            </ol>
+             <!--순서 있는 목록 : 100번부터 시작해서 중간에 200번으로 점프하기-->
+             <ol type = "1" start ="100">
+                <li>서울</li>
+                <li>부산</li>
+                <li value ="200">대구</li>
+                <li>광주</li>
+             </ol>
+
+
+
+             <h3>ul 태그 하위 요로소 ol 태그 사용</h3>
+            <ul type ="square">
+                <li>로맨틱 코미디
+                    <ol>
+                        <li>해리와 샐리가 만났을때 </li>
+                        <li>당신이 잠든 사이</li>
+
+                    </ol>
+                <li>액션
+                    <ol>
+                        <li>글래디에이터</li>
+                        <li>007 어나더 데이</li>
+                        <li>나쁜녀석들</li>
+                    </ol>
+                </li>
+                <li>공포
+                    <ol>
+                        <li>링</li>
+                        <li>13일의 금요일</li>
+                        <li>스크림</li>
+                    </ol>
+
+                </li>
+            </ul>
+            
+            <h3>dl, dt, dd태그 : 설명 목록 만들기</h3>
+            <!--<dl>태그는 제목과 설명이 한 쌍이 설명 목록을 만듬-->
+            <dl>
+                <dt>올레 1코스</dt><!--제목-->
+                <dd>코스 : 시흥중학교 - 광치기해변</dd><!--설명-->
+                <dt>올레 2코스</dt>
+                <dd>코스 : 광치기해변 - 온평포구</dd>
+                <dd>거리 : 14.5km(4~5시간)</dd>
+            </dl>
+        
+       
+    </body>
+</html>

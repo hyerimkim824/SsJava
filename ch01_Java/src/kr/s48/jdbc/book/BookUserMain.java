@@ -55,22 +55,33 @@ public class BookUserMain {
 					String me_id = br.readLine();
 					dao.selectDetailMember(me_id);
 					
-				}else if(no == 3) {//상품구매
-					//상품 내역을 먼저 봐야한다.
+				}else if(no == 3) {//책 대출
+					//책 내역 확인.
 					dao.selectBooks();
 					System.out.println("--------------------------");
 					System.out.println("대출할 도서 번호 : ");
 					int bk_num = Integer.parseInt(br.readLine());
-					System.out.println("아이디 : ");
+					System.out.print("아이디 : ");
 					String me_id = br.readLine();
-					dao.insertReservation(me_id,bk_num);}
+					dao.insertReservation(me_id,bk_num);
+					dao.insertReservationBook(bk_num);}
 					
-				else if(no == 4) {//구매내역
+				else if(no == 4) {//책 대출 내역
 					System.out.print("아이디 : ");
 					String me_id = br.readLine();
 					dao.selectReservationById(me_id);
 					
-				}else if(no == 5) {//종료
+				}else if(no == 5) {//책 반납
+					System.out.print("아이디 : ");
+					String me_id = br.readLine();
+					dao.selectReservationById(me_id);
+					System.out.print("반납할 책 번호 : ");
+					int bk_num = Integer.parseInt(br.readLine());
+					dao.deleteReservationBook(bk_num);
+					dao.deleteReservation(bk_num);
+					
+			
+				}else if(no == 6) {//종료
 					System.out.println("프로그램 종료");
 					break;
 				}else {

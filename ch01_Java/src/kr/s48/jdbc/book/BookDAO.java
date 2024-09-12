@@ -48,15 +48,18 @@ public class BookDAO {
 		try {
 			//JDBC 수행 1,2단계
 			conn = DBUtil.getConnection();
+
 			//SQL문 작성
-			sql = "SELECT * FROM sbook ORDER BY bk_num DESC";
+			sql = "SELECT bk_num, bk_name, bk_category,bk_regdate, "
+					+ "(SELECT get_book(bk_num) FROM dual) res_num"
+					+ " FROM sbook ORDER BY bk_num DESC";
 			//JDBC 수행 3단계
 			pstmt = conn.prepareStatement(sql);
 			//JDBC 수행 4단계
 			rs = pstmt.executeQuery();
 			System.out.println("----------------------------");
 			if(rs.next()) {
-				System.out.println("번호\t책이름\t카테고리\t등록일");
+				System.out.println("번호\t책이름\t카테고리\t등록일\t대출현황");
 				do {
 					System.out.print(rs.getInt("bk_num"));
 					System.out.print("\t");
@@ -64,7 +67,9 @@ public class BookDAO {
 					System.out.print("\t");
 					System.out.print(rs.getString("bk_category"));
 					System.out.print("\t");
-					System.out.println(rs.getDate("bk_regdate"));
+					System.out.print(rs.getDate("bk_regdate"));
+					System.out.print("\t");
+					System.out.println(rs.getInt("res_num"));
 				}while(rs.next());
 			}else {
 				System.out.println("등록된 상품이 없습니다.");
@@ -280,14 +285,14 @@ public class BookDAO {
 				conn = DBUtil.getConnection();
 				//SQL문 작성
 				sql ="INSERT INTO  reservation(re_num,re_status, me_id, bk_num,re_modifydate) "
-						+ "VALUES (reservation_seq.nextval,?,?,?,SYSDATE)";
+						+ "VALUES (reservation_seq.nextval,(SELECT get_book(?) FROM re_book WHERE ROWNUM =1),?,?,SYSDATE)";
 				
 				//JDBC 수행 3단계
 				
 				pstmt = conn.prepareStatement(sql);
 				
 				//?에 데이터 바인딩
-				pstmt.setInt(1,1 );
+				pstmt.setInt(1,bk_num);
 				pstmt.setString(2, me_id);
 				pstmt.setInt(3, bk_num);
 				
@@ -321,7 +326,7 @@ public class BookDAO {
 				//JDBC 수행 1,2 단계
 				conn = DBUtil.getConnection();
 				//SQL문 작성
-				sql = "SELECT re_num, re_regdate, bk_name, bk_category FROM reservation JOIN sbook "
+				sql = "SELECT bk_num,re_status, re_regdate, bk_name, bk_category FROM reservation JOIN sbook "
 						+ "USING(bk_num) WHERE me_id = ? ORDER BY re_num DESC";
 				
 				//JDBC 수행 3단계
@@ -337,9 +342,11 @@ public class BookDAO {
 				
 				if(rs.next()) {
 					
-					System.out.println("번호\t책이름\t책 카테고리\t대출일");
+					System.out.println("번호\t대출현황\t책이름\t책 카테고리\t대출일");
 					do {
-						System.out.print(rs.getInt("re_num"));
+						System.out.print(rs.getInt("bk_num"));
+						System.out.print("\t");
+						System.out.print(rs.getInt("re_status"));
 						System.out.print("\t");
 						System.out.print(rs.getString("bk_name"));
 						System.out.print("\t");
@@ -366,7 +373,90 @@ public class BookDAO {
 		
 		
 	
-	//반납에 대한것은 나중에 추가로
+	//대출하면->re_book list목록으로
+		
+		public void insertReservationBook(
+				int bk_num) {
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			String sql = null;
+			try {
+				//JDBC 수행 1,2단계
+				conn = DBUtil.getConnection();
+				//SQL문 작성
+				sql = "INSERT INTO re_book (bk_num) VALUES (?)";
+				//JDBC 수행 3단계
+				pstmt = conn.prepareStatement(sql);
+				//?에 데이터 바인딩
+				pstmt.setInt(1, bk_num);
+		
+				//JDBC 수행 4단계
+				int count = pstmt.executeUpdate();
+				System.out.println(count + "개의 도서를 대출목록에 등록했습니다.");
+			}catch(Exception e) {
+				e.printStackTrace();
+			}finally {
+				//JDBC 수행 5단계 : 자원정리
+				DBUtil.executeClose(null, pstmt, conn);
+			}
+		}
+		
+		//반닙하면->re_book list목록에서 지워진다.
+		
+		
+		public void deleteReservation(
+				int bk_num) {
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			String sql = null;
+			try {
+				//JDBC 수행 1,2단계
+				conn = DBUtil.getConnection();
+				//SQL문 작성
+				sql = "DELETE FROM reservation WHERE bk_num =? AND ROWNUM = 1";
+				//JDBC 수행 3단계
+				pstmt = conn.prepareStatement(sql);
+				//?에 데이터 바인딩
+				pstmt.setInt(1, bk_num);
+		
+				//JDBC 수행 4단계
+				int count = pstmt.executeUpdate();
+				System.out.println(count + "개의 도서를 반납했습니다.");
+			}catch(Exception e) {
+				e.printStackTrace();
+			}finally {
+				//JDBC 수행 5단계 : 자원정리
+				DBUtil.executeClose(null, pstmt, conn);
+			}
+		}
+		
+		public void deleteReservationBook(
+				int bk_num) {
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			String sql = null;
+			try {
+				//JDBC 수행 1,2단계
+				conn = DBUtil.getConnection();
+				//SQL문 작성
+				sql = "DELETE FROM re_book WHERE bk_num =? AND ROWNUM = 1";
+				//JDBC 수행 3단계
+				pstmt = conn.prepareStatement(sql);
+				//?에 데이터 바인딩
+				pstmt.setInt(1, bk_num);
+		
+				//JDBC 수행 4단계
+				int count = pstmt.executeUpdate();
+				//System.out.println(count + "개의 도서를 대출목록에서 제거했습니다..");
+			}catch(Exception e) {
+				e.printStackTrace();
+			}finally {
+				//JDBC 수행 5단계 : 자원정리
+				DBUtil.executeClose(null, pstmt, conn);
+			}
+		}
+		
+		
 	
 
 }
