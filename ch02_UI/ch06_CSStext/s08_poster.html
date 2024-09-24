@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>인터스텔라</title>
+        <style type = "text/css">
+            /*아이디 선택자는 문서에서 한 번만 적용*/
+            #main_title{font-size:30pt;color:black;
+                text-shadow:-3px -3px  #CCC;
+                margin-left: 100px;} 
+            #poster_img{float: right;
+                margin-right: 50px;}
+            .plus-image{display: flex;
+                justify-content: space-between;}
+            .plus-image img{
+                width: 47%; /* 이미지 너비 설정 */
+                height: auto;
+            }
+            #plot{font-size:13pt;color:red;}
+        </style>
+    </head>
+    <body>
+        <!--메인 타이틀-->
+        <span><h1 id ="main_title"><a href = "https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&ssc=tab.nx.all&query=%EC%9D%B8%ED%84%B0%EC%8A%A4%ED%85%94%EB%9D%BC&oquery=%EC%9D%B8%ED%84%B0%EC%8A%A4%ED%85%94%EB%9D%BC+%EC%A0%95%EB%B3%B4&tqi=iXYPLsqpts0ssZ2MpNVssssssQR-131291" title ="인터스텔라">
+            인터스텔라</a></h1> 
+        <em>영화 Interstellar 2014</em></span>
+        <p id = "poster_img"><img src="../files/interstella.jpg" width="220" height="350"></p>
+        
+        <p id="t1"><b>개요</b>&nbsp;&nbsp;&nbsp;SF 미국,영국 169분 </p>
+        <p id="t2"><b>개봉</b>&nbsp;&nbsp;&nbsp;2014.11.06 </p>
+        <p id="t3"><b>평점</b>&nbsp;&nbsp;&nbsp;&#9733;9.12</p>
+        <p id="t4"><b>관객수</b>&nbsp;&nbsp;&nbsp;1,034만명</p>
+
+        <div><b>소개</b>
+        <br>
+        세계 각국의 정부와 경제가 완전히 붕괴된 미래가 다가온다. 
+        지난 20세기에 범한 잘못이 전 세계적인 식량 부족을 불러왔고, NASA도 해체되었다. 
+        이때 시공간에 불가사의한 틈이 열리고, 남은 자들에게는 이 곳을 탐험해 인류를 구해야 하는 임무가 지워진다. 사랑하는 가족들을 뒤로 한 채 인류라는 더 큰 가족을 위해, 
+        그들은 이제 희망을 찾아 우주로 간다. 그리고 우린 답을 찾을 것이다.
+        </div>
+
+        <div class ="plus-image">
+            <img src="../files/inter1.jpg">
+            <img src="../files/inter2.jpg">
+            <img src="../files/inter3.jpg">
+        </div>
+
+        <h3 id = "plot"><b>
+            감상평 남기고 선물받자!!</b></h3>
+        <form action ="do.jsp" method ="get">
+            <fieldset>
+                <ul>
+                    <li>
+                        <label for="name">이름</label>
+                        <input type="text" name="name" id="name" autofocus required>
+                    </li>
+                    <li>
+                        <label for="password">비밀번호</label>
+                        <input type="text" name="password" id="password" autofocus required>
+
+                    </li>
+
+                    <li>
+                        <label for="email">이메일</label>
+                        <!-- email : 이메일 필드 -->
+                        <input type="email" name="email" id="email">
+                    </li>
+
+                </ul>
+
+
+            내용<br>
+            <!-- textarea : 여러줄 입력 태그 -->
+            <textarea rows="5" cols="50" name="content"></textarea>
+            <br>
+            <input type="submit" value="전송">
+            <input type="reset" value="초기화"> 
+
+            </fieldset>
+
+            
+
+
+
+        </form>
+
+
+
+
+    </body>
+</html>

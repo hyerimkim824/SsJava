@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수 사용시 주의사항</title>
+</head>
+<body>
+    <script type ="text/Javascript">
+        var food ='김치찌개';
+        document.write(food+'<br>');
+
+        food='라면';//데이터 변경
+        document.write(food);
+        document.write('<br>----------<br>');
+
+        //변수명을 동일하게 선언해도 오류가 발생하지 않음
+        var food ='냉면';//위에서 이미 선언한 food와 같은 명칭으로 변수명 사용
+        document.write(food);
+    </script>
+    
+</body>
+</html>

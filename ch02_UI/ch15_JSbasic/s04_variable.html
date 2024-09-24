@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수</title>
+</head>
+<body>
+    <script type="text/Javascript">
+        /*
+        변수명의 정의
+        1. 키워드(예약어)를 사용하면 안된다
+        2.숫자로 시작하면 안된다
+        3.특수문자는 _와 $만 허용
+        4.공백 문자를 포함할 수 없음
+
+        식별자를 잘못 지정한 예
+        break (키워드)
+        10alpha (숫자로 시작)
+        #num(특수문자 사용)
+
+        식별자의 의미를 더 명확하게 하려고 사용하는 규칙
+        1.생성자 함수의 이름은 항상 대문자로 시작
+        2.변수, 인스턴스, 함수 ,메서드의 이름은 항상 소문자로 시작
+        3. 여러 단어로 이루어진 식별자는 각 단어의 첫글자를 대문자로 함
+        */
+
+           //변수 선언
+           var num;
+
+            //변수에 값 할당
+            num2 = 1234;
+
+            //출력
+            document.write("num2 = " + num2);
+            document.write("<br>");
+
+            //변수 선언 후 값을 할당하지 않고 출력하면 undefined로 출력, 오류는 발생하지 않음
+            var num3;
+            document.write('num3 ='+num3);
+            document.write("<br>");
+
+            //변수를 선언하지 않고 출력
+            documnet.write(num4);
+
+            //변수 선언과 초기화를 한 번 함
+            var c = 10, d = 3.5;
+            document.write('c+d = ' + (c + d)); 
+            document.write("<br>");
+
+            //한글 사용 가능
+            var 번호 = 3;
+            document.write("번호 = " + 번호);
+
+
+    </script>
+    
+</body>
+</html>

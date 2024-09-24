@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>테이블에 가상클래스 선택자 사용하기</title>
+        <style type ="text/css">
+            table{
+                width: 600px;
+                border:1px solid black;
+            }
+            th,td{
+                border:1px solid black;
+            }
+            tr:nth-of-type(even){ /*짝수 행을 의미한다.*/
+                background-color: #F3F3F3;
+            }
+            tr:nth-of-type(odd){ /*홀수 행을 의미한다.*/
+                background-color: #ddd;
+            }
+            tr:last-child{ 
+                font-weight:bold;
+            }
+            td:last-child{
+                font-weight:bold;
+            }
+        </style>
+    </head>
+    <table>
+        <tr>
+
+        <th>품목</th>
+        <th>단가</th>
+        <th>수량</th>
+        <th>금액</th>
+        </tr>
+
+        <tr>
+        <td>머그컵</td>
+        <td>$10.00</td>
+        <td>5</td>
+        <td>$50.00</td>
+        </tr>
+
+        <tr>
+        <td>티셔츠</td>
+        <td>$10.00</td>
+        <td>5</td>
+        <td>$50.00</td>
+        </tr>
+
+        <tr>
+        <td>스테이플러</td>
+        <td>$10.00</td>
+        <td>5</td>
+        <td>$50.00</td>
+        </tr>
+
+    </table>
+    
+ 
+</html>
