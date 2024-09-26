@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열의 요소 추가</title>
+</head>
+<body>
+    <script type ="text/javascript">
+
+        //자바스크립트의 배열은 가변 길이이기 때문에 요소의 추가, 삭제 가능
+        const array=['포도','사과'];
+        //배열 요소의 목록 : 배열의 요소를 쉼표(,)로 구분해서 문자열 반환
+        document.write(array+'<br>');
+
+        array[2] ='사과'; //인덱스 2에 요소를 대입해서 요소의 개수가 늘어남
+        document.write(array+'<br>');
+
+        array[10]='망고';//인덱스 10에 요소를 대입하면 개수가 11이 됨
+        document.write(array+'[array.length] : '+array.length+'<br>');
+
+
+    </script>
+    
+</body>
+</html>

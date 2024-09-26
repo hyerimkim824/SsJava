@@ -22,7 +22,7 @@
         #main_header{
             width:100%;
             height:600px;
-            background:url(../files/space_main.avif) center no-repeat;
+            background:url(../files/space.avif) center no-repeat;
             background-size: cover;}
         /*헤더 구성하기*/
         .master-title{
@@ -73,21 +73,89 @@
             font-weight: 500;    
 
         }
-        .introduction{
-            width: 30%;
-            margin: 5px 15px;
-            height: 80px;
+
+        #content{
+            background-color:rgb(236, 224, 182);
+        }
+
+
+        #main_section1 .introduction{
+            float: left;
+        }
+
+        .reservation{
+            float: right ;
+            background-color: white ;
+            border: solid #000;
+            width: 550px;
+            height:130px;
+            border-radius: 10px;
+            padding:3px;
+            margin: 20px 20px;
+            text-align: center;
+            font-size: 25px;
+            background:url(../files/space_main.avif); width:500;
+        }
+
+
+        
+        .reservation li{
+
+            float: right ;
+            font-family: Ghodic;
+            font-weight: 500;  
+            font-size: 20px;
+            text-align: center;
+            list-style: none;
+            padding:2px;
+
+            
+            width: 93px;
+            margin:17px 35px;
+            height: 35px;
             background-color: #ccc;
             border: solid #000;
             border-radius: 10px;
-        
 
         }
-        .introduction #intro{
+        
+        
+        .reservation li a{
+        
+            
+            text-decoration: none;
+            color:black;
             text-align: center;
+            font-family: Ghodic;
+            font-weight: 500;  
+            font-size: 21px;
+            padding:3px;
+        
+        
+        }
+        .introduction{
+            width: 30%;
+           
+            height: 130px;
+            border-radius: 10px;
+            margin:20px;
+
+        }
+
+        #main_section2{
+            clear:both;
+            margin:30px 10px 10px 10px;
+        }
+        .introduction #intro{
+            
+            font-size: 25px;
+            padding: 10px;
         }
         .introduction #clock{
-            text-align: center;
+            color:black;
+            padding-left: 20px;
+            font-size: 20px;
+           
         }
 
         #mainseciton1 .reservation_nav{
@@ -99,17 +167,49 @@
         .observation, .planatarium, .cosmos{
             float:left;
             font-size: 30px;
-            margin: 20px 30px;
+            margin: 20px 30px ;
             border : solid #000;
             border-radius: 10px;
             padding: 30px;
        
         }.observation a, .planatarium a, .cosmos a{
             text-decoration: none;
-            color:black;
+            color:#fff;
+            margin:10px 10px 0px 10px;
+        }
+
+        .planatarium{
+            background:url(../files/star.jpg) center no-repeat;
+
+        }
+        .observation{
+            background:url(../files/obs.jpg) center no-repeat;
+
+        }
+        .cosmos{
+            background:url(../files/cos.avif) center no-repeat;
+
         }
         
 
+         /*footer 스타일 지정*/
+         footer{
+            position:fixed;/*상단에 고정*/
+            font-size: 10px;
+            bottom:0;/*화면의 제일 위에 배치*/
+            width:100%;
+            height:20px;
+            background-color:black;
+            margin:30px 0 0 0;
+    
+
+        }
+        footer a{
+            font-family: 'Oleo Script',culsive;
+            font-size: 1.5em;
+            line-height: 20px;
+            color: white;
+            text-align: center}
 
     </style>
 </head>
@@ -150,21 +250,22 @@
             <section id ="main_section1">
                 <article>
                     <div class="introduction">
-                        <h1 id="intro">관람 안내</h1>
-                        <span id="clock">오전 9:30 ~ 오후 5:30
-                            <br>금,토 야간관측
+                        <h1 id="intro">&nbsp;&nbsp;관람 안내 </h1>
+                        <span id="clock">&nbsp;오전 9:30 ~ 오후 5:30 <br>&nbsp;&nbsp;&nbsp;&nbsp;  금,토 야간관측
                         </span>
-                        <span id ="reservation">온라인 예약</span>
 
                     </div>
 
-                    <nav>
-                        <ul id ="reservation_nav">
+                    <div class="reservation">
+
+                        <h1 >온라인 예약</h1>
+                        <ul >
+                            
                             <li><a href="#reservation1">개인 예약</a></li>
                             <li><a href="#reservation2">관람</a></li>
                             <li><a href="#reservation3">교육</a></li>
                         </ul>
-                    </nav>
+                    </div>
                 </article>
                
             </section>

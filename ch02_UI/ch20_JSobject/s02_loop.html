@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type ="text/javascript">
+
+        //객체 생성
+        const product ={
+            name:'eclipse',
+            price:'10,000원',
+            language:'한국어',
+            supportOS:'win11',
+            suscription:true
+        };
+        //for in 반복문을 이용해서 속성읽기
+        for(let key in product){
+            document.write(key+':'+product[key]+'<br>');
+        }
+    </script>
+    
+</body>
+</html>

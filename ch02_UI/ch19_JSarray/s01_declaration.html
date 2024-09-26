@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+</head>
+<body>
+    <script type ="text/javascript">
+        //배열 생성
+        let array=['포도','사과','바나나','망고'];
+
+        //배열 요소 읽기
+        document.write(array[0]+'<br>');
+        document.write(array[1]+'<br>');
+        document.write(array[2]+'<br>');
+        document.write(array[3]+'<br>');
+        document.write('--------------------<br>');
+        //반복문을 이용한 요소의 출력
+        for(let i=0;i<array.length;i++){
+            document.write('array['+i+']:'+array[i]+'<br>')
+        }
+        document.write('--------------------<br>');
+        for(let i in array){
+            document.write('array['+i+']:'+array[i]+'<br>');
+        }
+        document.write('--------------------<br>');
+
+        //배열 요소의 목록 보기
+
+        document.write(array);
+
+    
+
+    </script>
+    
+</body>
+</html>

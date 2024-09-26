@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>forEach</title>
+</head>
+<body>
+    <script type ="text/javascript">
+        //배열 생성
+
+        const array = [10,20,30,40,50,60,70,80,90,100];
+        let sum = 0;
+        let output='';
+        array.forEach(function(element,index,array){
+
+            //누적
+            sum +=element;
+            document.write(index+' : '+element+'->'+sum+'<br>');
+
+        })
+
+        document.write('--------------------<br>');
+        document.write('배열 요소의 합계 : '+sum);
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 실습</title>
+</head>
+<body>
+    <script type = "text/javascript">
+
+        /*
+        정수 다섯개를 입력 받아서 배열에 저장
+        배열에서 최소값과 최댓갑을 구해서 출력하시오
+        [입력 예시] prompt를 이용해서 다섯개의 정수 입력
+
+        [출력예시] 최대값 : 100
+                  최소값 : 33
+        */
+        score =[];
+
+        for(var i=0; i<5;i++){
+         score.push(prompt())};
+
+        var x = score[0] ; 
+        for(var i =0; i<5;i++){
+            if(score[i]<=x){
+                var x = score[i];
+            };
+        };
+
+        document.write('최소값 : '+x +'<br>');
+        
+        var y = score[0] ; 
+        for(var i =0; i<5;i++){
+            if(score[i]>=y){
+                var y = score[i];
+            };
+        };
+
+        document.write('최대값 : '+y);
+
+
+
+    </script>
+    
+</body>
+</html>

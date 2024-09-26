@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 실습</title>
+</head>
+<body>
+    <script type = "text/javascript">
+        /*
+        5과목(국어,영어,수학,과학,미술)을 입력바아서 배열에 저장하고 총점, 평균
+        [입력 예시] 5과목을 prompt로 입력
+        [출력예시]
+        총점 : 000
+        평균 : 00
+
+        */
+        score = [];
+        var korean  =prompt("국어 : ");
+        score.push(korean);
+        var english   =prompt("영어 : ");
+        score.push(english);
+        var math =prompt("수학 : ");
+        score.push(math);
+        var science  =prompt("과학 : ");
+        score.push(science);
+        var art  =prompt("미술 : ");
+        score.push(art);
+
+       
+
+        function sumFtn(array){
+            var s = 0;
+            for(var i=0; i<array.length;i++){
+                s+=array[i]
+            }
+            return s;
+        }
+
+        document.write(sumFtn(score));
+
+
+    </script>
+    
+</body>
+</html>

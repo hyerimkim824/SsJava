@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>findIndex</title>
+</head>
+<body>
+    <script type ="text/javascript">
+
+        //배열 생성
+        const array = [10,20,30,40,50,60,70,80,90,100];
+
+        //findIndex : 조건에 만족하는 첫번째 인덱스 반환
+        let find1 = array.findIndex(function(element,index,array){
+            return element >70; //80,90,100 중 첫번째 값의 인덱스 반환
+        }
+        )
+        document.write('find1 ='+find1+'<br>');
+
+        let find2 = array.findIndex(function(element,index,array){
+            return index >5 &&index<9; //6,7,8 중 첫번째 인덱스 반환
+
+        });
+
+        document.write('find2 = '+find2);
+
+
+    </script>
+    
+</body>
+</html>

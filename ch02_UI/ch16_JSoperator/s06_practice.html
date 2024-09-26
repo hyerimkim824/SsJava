@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /*
+        국어,영어,수학 성적(0~100)을 입력 받아서 총점, 평균 구함
+        [입력예시] promt 사용 - 국어 입력, 영어 입력, 수학 입력
+        [출력예시] 
+        국어 : 99
+        영어 : 98
+        수학 : 97
+        총점 : 294
+        평균 : 98
+        */
+       var kor = prompt('국어 성적을 입력하세요 ');//prompt : string으로 받는다
+       var eng = prompt('영어 성적을 입력하세요 ');//명시적 형변환 필요
+       var math = prompt('수학 성적을 입력하세요 ');//Number() 사용
+       var sum;
+       var result;
+
+       sum =  Number(kor) + Number(eng) +Number(math);
+       result =  sum/3;
+
+       document.write('국어 : ' + kor + '<br>');
+       document.write('영어 : ' + eng + '<br>');
+       document.write('수학 : ' + math + '<br>');
+       document.write('총점 : ' + sum + '<br>');
+       document.write('평균 : ' + result + '<br>');
+
+
+    </script>
+</body>
+</html>
