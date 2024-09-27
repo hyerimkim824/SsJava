@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>빈 객체에 속성 추가</title>
+</head>
+<body>
+    <script type="text/javascript">
+        //빈 객체 생성
+        const student = {};
+
+        document.write(student+'<br>');
+        document.write(student.toString()+'<br>');
+        document.write('-------------------------<br>')
+
+
+        //객체에 속성 추가
+        student.이름 = '홍길동';
+        student.취미 = '악기';
+        student.특기 = '프로그래밍';
+        student.장래희망 = '대통령';
+
+        //for in 반복문을 이용해서 추가된 속성 확인
+        for(let key in student){
+            document.write(key + ':' + student[key] + '<br>');
+        }
+
+        //객체에 메서드 추가
+        student.toString = function(){
+            let msg = '';
+            for(let key in student){
+                msg += key + ':' + student[key] + '<br>';
+            }
+            return msg;
+        };
+
+        //for in 반복문을 이용해서 추가된 속성 및 메서드 확인
+        for(let key in student){
+            document.write(key + ':' + student[key] + '<br>');
+        }
+
+        //객체에 추가한 메서드 호출
+        document.write(student.toString() + '<br>');
+        document.write('----------------------<br>');
+        //toString()를 생략하고 호출해도 내부적으로 toString()을 자동 호출
+        document.write(student);
+
+    </script>
+</body>
+</html>

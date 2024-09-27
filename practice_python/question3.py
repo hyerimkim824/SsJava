@@ -1,8 +1,16 @@
-#this quetion is the number2 question for coding test book
+#this quetion is the number3 question for coding test book
 
-#declare list
-a1 =[4,2,2,1,3,4]
-a2 =[2,1,1,3,2,5,4]
+#make list
+a1 = [2,1,3,4,1]
+a2 = [5,0,2,7]
+
+def plusftn(x):
+    y = []
+    for i in range(len(x)):
+        for j in range(i+1,len(x)):
+            sum = x[i]+x[j]
+            y.append(sum)
+    return y
 
 #make function for overlapped value of the list
 def deleteArray(x):
@@ -13,8 +21,7 @@ def deleteArray(x):
         for j in range(i+1,len(x)):
             if x[i]==x[j]:
                 y.append(x[i])
-            if j==len(x)-1:
-                break
+          
 
         i+=1
     for k in y:
@@ -29,12 +36,12 @@ def arr(a):
         for j in range(len(b)):
                 x = b[i]
                 y = b[j]
-                if b[i]>b[j]:
+                if b[i]<b[j]:
                     b[i]=y
                     b[j]=x
     return b
 
 #arangement
 
-print(arr(deleteArray(a1)))
-print(arr(deleteArray(a2)))
+print(arr(deleteArray(plusftn(a1))))
+print(arr(deleteArray(plusftn(a2))))

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로토타입을 사용한 메서드 정의</title>
+</head>
+<body>
+    <script>
+        //생성자 함수 정의
+        function Student(name,korean,math,english){
+            this.이름 = name;
+            this.국어 = Number(korean);
+            this.수학 = Number(math);
+            this.영어 = Number(english);
+        }
+
+        Student.prototype.getSum = function(){
+            return this.국어 + this.수학 + this.영어;
+        };
+        Student.prototype.getAvg = function(){
+            return this.getSum() / 3;
+        };
+        Student.prototype.toString = function(){
+            return this.이름 + ', ' + this.getSum() + ', ' + this.getAvg(); 
+        }
+
+
+        const students = [];
+        students.push(new Student('오선우', 100, 99, 100));
+        students.push(new Student('김선우', 80, 76, 52));
+        students.push(new Student('박선우', 57, 34, 77));
+        students.push(new Student('최선우', 67, 79, 58));
+        students.push(new Student('황선우', 54, 95, 67));
+        students.push(new Student('남궁선우', 79, 58, 43));
+        students.push(new Student('독고선우', 99, 79, 100));
+
+        document.write('이름, 총점, 평균 <br>');
+        let output = '';
+        for(let i in students){
+            output += students[i] + '<br>';
+        }
+
+        document.write(output);
+    </script>
+</body>
+</html>

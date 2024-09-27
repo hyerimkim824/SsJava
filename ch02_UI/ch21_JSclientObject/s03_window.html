@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout</title>
+</head>
+<body>
+    <script type = "text/javascript">
+
+        /*
+        setTimeout(function, millisecond) : 일정 시간 후에 함수를 한 번 실행
+        setInterval(function, millisecond ) : 일정 시간마다 함수를 한 번 실행
+        */
+
+        //윈도우가 로드될때
+        window.onload = function(){
+            alert('경고창을 닫고 3초 후 이 페이지는 종료됩니다.');
+
+            //3초 후에 함수를 실행
+            window.setTimeout(function(){
+                window.close(); //현재 실행되는 창을 닫을 수 있도록 한다<div class=""></div>
+            },3000)//디지털 시계 같은것을 만들때 사용된다.
+
+        }
+
+
+    </script>
+    
+</body>
+</html>

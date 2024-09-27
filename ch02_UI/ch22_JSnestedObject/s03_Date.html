@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date (디지털 시계 만들기)</title>
+    <script type="text/javascript">
+        //윈도우가 로드될 때 함수 호출
+        window.onload=function(){
+            //일정 시간마다 매개변수로 전달된 함수를 반복해서 실행
+            setInterval(function(){
+                const time = new Date();
+                let hours = time.getHours();//시
+                let minutes = time.getMinutes();//분
+                let seconds = time.getSeconds();//초
+                let clock = '';//빈문자
+
+                clock += ((hours < 10) ? '0' : '') + hours;//한자리일 경우 0을 붙힌다
+                clock += ((minutes < 10) ? ':0' : ':') + minutes;
+                clock += ((seconds < 10) ? ':0' : ':') + seconds;
+
+                //id가 display인 span를 호출
+                document.getElementById('display').innerHTML = clock;
+
+            },1000);
+        }
+    </script>
+</head>
+<body> <!--바디에 있는 태그를 인식하고 동작할 때까지 헤드 동작을 지연시켜야함-->
+<!--display"></span> >< 사이에 시분초를 넣는다-->
+    <span id="display"></span>
+</body>
+</html>
