@@ -23,8 +23,7 @@ public class HashMapMain02 {
 		//반복문을 이용해서 key와 value의 쌍으로 정보 구하기
 		//Set<Integer> s = map.keySet();
 		//Iterator<Integer> keys = s.iterator();
-		//s라는 변수를 주는 것 보다는 아래처럼 선언하는 것이 더 좋다.
-		Iterator<Integer> keys = map.keySet().iterator(); 
+		//s라는 변수를 주는 것 보다는 아래처럼 선언하는 것이 Iterator<Integer> keys = map.keySet().iterator(); 
 		while(keys.hasNext()) {
 			Integer key = keys.next();
 			System.out.println(key+", "+map.get(key));

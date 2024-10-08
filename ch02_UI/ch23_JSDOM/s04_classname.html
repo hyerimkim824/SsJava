@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class를 이용한 문서 객체 탐색</title>
+</head>
+<body>
+    <p id ="foo">
+
+        <span class = "matched">a</span>
+        <span class = "matched unmatched">b</span>
+        <span class ="unmatched">c</span>
+    </p>
+    <p id = "bar">
+        <span class ="matched">x</span>
+    </p>
+    <script type = "text/javascript">
+        /*
+        getElementsByClassName(클래스명) : 태그의class 속성이 지정한
+        class명과 일치하는 문서 객체를 배열로 반환
+        */
+
+        const foo = document.getElementsByClassName('matched');
+
+        let output ='[class명이 matched인 모든 태그의 text출력]';
+
+        for(let i=0;i<foo.length;i++){
+            output +=foo[i].innerHTML+'';
+        }
+        document.write(output+'<br>');
+
+        const foo2 = document.getElementById('foo');
+        const fooMatched = foo2.getElementsByClassName('matched');
+
+        let output2 ='id가 foo인 태그의 하위 태그 중 class명이 mathced인 모든 태그의 text출력]';
+        for(let i =0;i<fooMatched.length;i++){
+            output2 +=fooMatched[i].innerHTML+'';
+        }
+        document.write(output2+'<br>');
+
+        //클래스명이 여러개인 경우 공백을 구분자로 문자열로 전달, 순서는 바꾸어도 됨
+
+        const fooMatched2 = foo2.getElementsByTagName('matched unmatched');
+        let output3 = '[id가 foo인 태그의 하위 태그 중 class명이 mathched]'
+        for(let i=0;u<fooMatched2.length;i++){
+            output3 +=fooMatched2[i].innerHTML+'';
+        }
+        document.write(output3);
+
+        
+    </script>
+    
+</body>
+</html>

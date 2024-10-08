@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 전달</title>
+    <script type="text/javascript">
+        /*
+        이벤트 전파(전달) : 특정 태그에서 이벤트가 발행하면 다른
+                           태그로 이벤트가 전달되는 현상
+        이벤트 버블링 : 자식 노드에서 부모 노드 순으로 이벤트를 
+                       실행하는 것을 의미
+        이벤트 캡쳐링 : 이벤트가 부모노드에서 자식노드 순으로 
+                       실행하는 것을 의미                                  
+        */
+        window.onload=function(){
+            //이벤트 연결
+            document.getElementById('space').onclick=function(){
+                alert('space');
+                this.style.background='pink';
+            };
+            document.getElementById('paragraph').onclick=function(event){
+                alert('paragraph');
+                this.style.background='yellow';
+                //이벤트 전파 막기
+                //이벤트 핸들러에 매개변수로 event 객체를 전달받아서
+                //event 객체의 stopPropagation() 메서드를 호출하면
+                //이벤트 전파를 막을 수 있음
+                event.stopPropagation();
+            };
+        };
+    </script>
+</head>
+<body>
+    <div id="space">Space
+        <p id="paragraph">Paragraph</p>
+    </div>
+</body>
+</html>

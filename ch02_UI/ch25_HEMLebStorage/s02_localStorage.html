@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로컬 스토리지</title>
+    <script type ="text/javascript">
+        window.onload=function(){
+            const save = document.getElementById('save');
+            //이벤트 연결
+            save.onclick = function(){
+                //사용자가 입력한 번호,이름,주소 읽기
+                const num = document.getElementById('num');
+                const name = document.getAnimations('name');
+                const addr = document.getElementById('addr');
+
+                //객체 생성
+                const memberStr = {};
+                memberStr.num = num.value;
+                memberStr.name = name.value;
+                memberStr.addr = addr.value;
+
+                //JSON(JavaScript Obeject Notation) 형태의 문자열
+                //변환
+                localStorage.member = JSON.stringify(memberStr);
+
+                //input 태그 초기화
+                num.value = '';
+                name.value = '';
+                addr.value = ''
+            };//end of save
+
+            const load = document.getElementById('load');
+            //이벤트 연결
+            load.onclick = function(){
+                //저장된 문자열 읽기
+                const loadedMemberStr = localStorage.member;
+                //문자열을 객체로 변환
+                const memberObj = JSON.parse(loadedMemberStr);
+                //객체에 있는 내용 확인
+                alert(memberObj.num +', '+memberObj.name+', '+memberObj.addr)
+            }
+        
+        }
+
+    </script>
+</head>
+<body>
+    번호: <input type ="text" id ="num"><br>
+    이름 : <input type ="text" id ="name"><br>
+    주소 : <input type ="text" id = "addr"><br>
+    <button id ="save">저장</button>
+    <button id ="load">불러오기</button>
+
+    member
+
+    
+</body>
+</html>

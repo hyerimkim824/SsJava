@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type ="text/javascript" src ="../js/jquery-3.7.1.min.js"></script>
+    <script type ="text/javascript">
+        /*
+        입력 양식 필터 선택자 2
+        선택자 형태                          설명
+        요소: chkecked                체크된 입력 양식
+        요소 : disabled               비활성화된 입력 양식
+        요소 : enabled                활성화된 입력 양식
+        요소 : focus                  초점이 맞춰져 있는 입력 양식
+        요소 : selected               select 태그에서 option 객체 중 선택된 태그
+
+        */
+        $(document).ready(function(){
+            //5초 후에 코드를 실행
+            setTimeout(function(){
+                //select 태그에서 선택한 option에 접근
+                let value = $('select>option:selected').val();
+                alert(value);
+            },5000);
+        });
+    </script>
+
+</head>
+<body>
+    <select>
+        <option>서울</option>
+        <option>부산</option>
+        <option>대구</option>
+        <option>광주</option>
+        <option>인천</option>
+    </select>
+    
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>할 일 목록(TodoList)</title>
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <style type="text/css">
+        body{
+            margin:0;
+            padding:0;
+            font-family: sans-serif;
+        }
+        .title{
+            text-align: center;
+            font-weight: bold;
+            font-size:20pt;
+        }
+        .todo-done{
+            text-decoration: line-through;
+        }
+        .container{
+            padding:10px;
+        }
+        .pointer{
+            cursor: pointer;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="card card-body">
+            <div class="title">할 일 목록(TodoList)</div>
+        </div>
+        <div class="card card-default">
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col">
+                        <div class="input-group">
+                            <input type="text" class="form-control"
+                              name="msg" placeholder="할 일을 여기에 입력!"
+                                   id="todo">
+                            <span class="btn btn-primary input-group-addon"
+                                                        id="add_btn">추가</span>       
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <ul class="list-group" id="list"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        //유일한 식별값을 사용하기 위해서 숫자로 된 날짜값 활용
+        let ts = new Date().getTime();
+        //초기 데이터 배열 생성
+        const todoList = [
+            {id:ts,todo:'도서관에서 책 대여하기',
+                      created:'2024-09-29',completed:true},
+            {id:ts+1,todo:'영화 보기',
+                      created:'2024-09-30',completed:false},
+            {id:ts+2,todo:'저녁 장보기',
+                      created:'2024-10-01',completed:false},
+            {id:ts+3,todo:'운동하기',
+                      created:'2024-10-01',completed:false},                              
+        ];
+
+        //목록 처리
+        function selectList(){
+            let listGroup = document.getElementById('list');
+            //ul 태그의 하위 태그 초기화
+            listGroup.innerHTML = '';
+
+            //목록 표시
+            todoList.forEach(function(element,index,array){
+                let output = '';
+                if(element.completed){//할 일 체크가 true이면
+                    output += '<li class="list-group-item list-group-item-success">';
+                    output += '<span class="pointer todo-done check-btn" id="'+element.id+'">'+element.todo+' (완료)</span>';    
+                }else{//할 일 체크가 false이며
+                    output += '<li class="list-group-item">';
+                    output += '<span class="pointer check-btn" id="'+element.id+'">'+element.todo+' (작성일 : '+element.created+')</span>';    
+                }
+                
+                output +='<span class = "float-end badge bg-secondary pointer delete-btn" id="'+element.id+'">삭제</span>';
+                output+='<li>'
+                listGroup.innerHTML += output;
+            });//end of forEach
+
+            //삭제 이벤트 연결
+            const delete_btn = document.getElementsByClassName('delete-btn');
+            for(let i=0;i<delete_btn.length;i++){
+                delete_btn[i].onclick=function(){
+                    //this : 이벤트가 발생한 태그
+                    let id = this.id;
+
+                    //삭제하고자 하는 아이템의 id를 todoList 배열에서 찾기
+                    //(id를 검색해서 배열에 접근 후 삭제하려고 함)
+                    //아이템의 id와 일치한 id를 갖고 있는 객체의 배열 index 반환
+                    let index = todoList.findIndex((item)=> id == item.id);
+
+                    //해당 객체 삭제
+                    todoList.splice(index,1);
+
+                    //삭제하기위해 다시 호출
+                    selectList();
+                };
+            }
+
+            //할 일 체크 이벤트 연결
+            const check_btn = document.getElementsByClassName('check-btn');
+            for(let i=0;i<check_btn.length;i++){
+                check_btn[i].onclick = function(){
+                    let id = this.id;
+                    let index = todoList.findIndex((item) => id == item.id);
+                    //할 일 체크가 true -> false, flase -> true로 변경
+                    todoList[index].completed = !todoList[index].completed;
+                    selectList();
+                };
+            }
+        }//end of selectList
+        //초기 데이터 설정
+        selectList();
+
+        const todo = document.getElementById('todo');
+        //엔터 키 이벤트 연결
+        todo.onkeydown=function(event){
+            if(event.keyCode == 13){//엔터 키를 누를 경우
+                addTodo();//할 일 등록
+            }
+        };
+        //추가 버튼 이벤트 연결
+        const add_btn = document.getElementById('add_btn');
+        add_btn.onclick=function(){
+            addTodo();//할 일 등록
+        };
+
+        //등록 처리 함수
+        function addTodo(){
+            if(todo.value.trim()==''){
+                alert('할 일을 입력하세요');
+                todo.value='';//공백을 입력한 경우 공백 제거
+                todo.focus();
+                return;
+            }
+            todoList.unshift({id:new Date().getTime(),
+                todo:todo.value,created:new Date().toLocaleDateString().replace(/\. /g,'-').replace('.',''),completed:false});
+            //등록이 완료되면 input 태그 초기화
+            todo.value = '';
+            //등록된 데이터를 표시하기 위해 목록 호출
+            selectList();                
+        }
+
+
+    </script>
+</body>
+</html>

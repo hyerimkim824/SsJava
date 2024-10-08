@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+    <script type ="text/javascript" src ="../js/jquery-3.7.1.min.js"></script>
+    <script type ="text/javascript">
+        //문서가 준비 완료 되면 매개변수로 전달된 함수를 실행
+        $(document).ready(function(){
+
+            //#second의 이전 형제
+            $('#second').prev().css('border','1px solid red');
+            //#second의 다음 형제
+            $('#second').next().css('border','1px solid blue');
+            //#second의 형제들
+            $('#second').siblings().css('background','yellow');
+           
+
+        });
+    </script>
+</head>
+<body>
+    <h1>jQuery 선택자 사용</h1>
+    <ul>
+    
+        <ul>
+            <li>내용1</li>
+            <li id ="second">내용2</li>
+            <li>내용3</li>
+        </ul>
+
+    </ul>
+    
+</body>
+</html>

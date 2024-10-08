@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+    #canvas{
+        border: 1px solid black;
+    }
+</style>
+<script>
+    window.onload=function(){
+        const canvas = document.getElementById('canvas');
+        if(canvas.getContext){
+            const context = canvas.getContext('2d');
+            //bezierCurveTo(cp1x, cp1y,cp2x,cp2y,x,y):두개의 조절점, 즉(cp1x, cp1y)와 (cp2x, cp2y)
+            //를 이용해서 (x,y)까지의 곡선을 그림
+        context.beginPath();
+        context.moveTo(50,200);//시작점
+
+            
+
+        }else{
+            alert('브라우저가 캔버스를 지원하지 않습니다');
+        }
+    }
+</script>
+</head>
+<body>
+ <canvas id="canvas" width="500" height="500"></canvas>
+ <br><br>
+ <img src ="../files/exp_02.gif">
+</body>
+</html>

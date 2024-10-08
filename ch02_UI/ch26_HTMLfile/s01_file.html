@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>file</title>
+    <script type = "text/javascript">
+        window.onload=function(){
+
+            //파일을 선택할 때
+            document.getElementById('file').onchange=function(){
+                /*
+                선택한 파일의 file객체 얻기
+                input type ="file" 사용시 속성을 multiple로 지정
+                하면 복수의 파일을 전송할 수 있기 때문에 파일 하나 
+                업로드시 files[0], 파일 두개 업로드시 files[0],
+                files[1]에서 파일 정보를 얻을 수 있음
+                */
+                let file = this.files[0];
+                //파일 정보 출력
+                alert(file.name + '을 선택했습니다.');
+
+            }; //end of onchange
+
+            //읽기 버튼을 클릭할 때 이벤트 연결
+            document.getElementById('btnStart').onclick =function(){
+                readProcess();
+            }
+
+            function readProcess(){
+                //선택한 파일에 대한 정보 읽기
+                let file = document.getElementById('file').files[0];
+                if(!file){
+                    alert('팡일을 선택하세요!')
+                    return;
+                }
+
+                document.getElementById('filename').textContent=file.name;
+                document.getElementById('filesize').textContent='('+file.size+'bytes)';
+                document.getElementById('filetype').textContent=file.type;
+                document.getElementById('filedate').textContent=file.lastModifiedDate.toLocaleString();
+
+                //선택한 인코딩 방식 읽기
+                const encodeList = document.getElementById('encoding');
+                let encoding = encodeList.value;
+
+                const reader = new FileReader();//파일 읽기 기능 제공
+                reader.readAsText(file, encoding);//선택한 파일을 읽어서 문자열로 저장
+                //파일의 내용을 읽었을 때 이벤트 연결
+                reader.onload = function(){
+                    const disp = document.getElementById('contents');
+                    disp.value = reader.result; //읽어들인 내용 반환
+
+
+                };
+            }
+
+        };
+    </script>
+</head>
+<body>
+    <h2>현재 시스템의 파일 읽기</h2>
+    <input type ="file" id="file" accept ="text/*" multiple>
+    <select id ="encoding">
+        <option>EUC-KR</option>
+        <option>UTF-8</option>
+    </select>
+    <button id ="btnStart">읽기</button>
+    <br>
+    <div>
+        <span id ="filename">파일명</span>
+        <span id ="filesize">파일크기</span>
+        <span id = "filetype">파일타입</span>
+        <span id = "filedate">파일의 마지막 갱신 일시</span>
+    </div>
+    <textarea id="contents" rows ="10" cols ="50" readonly="readonly"></textarea>
+</body>
+</html>

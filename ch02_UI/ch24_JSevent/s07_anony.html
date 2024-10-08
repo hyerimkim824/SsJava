@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크립트에서 이벤트 연결하기</title>
+    <script type="text/javascript">
+        window.onload=function(){
+            //id가 header인 div 읽기
+            const header = document.getElementById('header');
+            //이벤트 연결
+            //이벤트 속성 = 이벤트 핸들러
+            header.onclick = function(){
+                alert('클릭');
+            };
+        };
+    </script>
+</head>
+<body>
+   <div id="header">클릭</div> 
+</body>
+</html>

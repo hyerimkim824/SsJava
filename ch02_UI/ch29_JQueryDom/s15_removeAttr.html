@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+    <script type ="text/javascript" src ="../js/jquery-3.7.1.min.js"></script>
+    <script type ="text/javascript">
+        $(function(){
+            //3초 후에 align 속성을 제거
+            setTimeout(function(){
+                //속성 제거
+                $('h1').removeAttr('align');
+            },3000);
+
+        });
+    </script>
+
+</head>
+<body>
+    <h1 align ="center">Header-0</h1>
+    <h1>Header-1</h1>
+    <h1>Header-2</h1>
+    
+</body>
+</html>

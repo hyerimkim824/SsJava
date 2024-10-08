@@ -1,26 +1,20 @@
 #this quetion is the number2 question for coding test book
 
 #declare list
-a1 =[4,2,2,1,3,4]
+a1 =[4,2,2,1,3,4,4]
 a2 =[2,1,1,3,2,5,4]
 
 #make function for overlapped value of the list
 def deleteArray(x):
-    i=0
-    y=[]
-    while i<len(x):
-        #to search of overlapped value in the input list
-        for j in range(i+1,len(x)):
-            if x[i]==x[j]:
-                y.append(x[i])
-            if j==len(x)-1:
-                break
+    result = []
+    for i in x:
+        if i not in result:
+           result.append(i)
+           
+    return result
 
-        i+=1
-    for k in y:
-        #remove the value
-        x.remove(k)
-    return x
+
+           
 
 #make function for arrangement
 def arr(a):
@@ -35,6 +29,7 @@ def arr(a):
     return b
 
 #arangement
+
 
 print(arr(deleteArray(a1)))
 print(arr(deleteArray(a2)))

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas</title>
+    <style type ="text/css">
+        #canvas{
+            border : 1px solid #999;
+        }
+    </style>
+    <script type ="text/javascript">
+        window.onload = function(){
+            const canvas = document.getElementById('canvas');
+
+            if(canvas.getContext){
+                const context = canvas.getContext('2d');
+
+                //색칠된 삼각형
+                context.beginPath();
+                context.moveTo(50,50);
+                context.lineTo(150,50);
+                context.lineTo(50,150);
+                context.closePath();
+                context.fill();
+
+                //빨간색 테두리의 삼각형
+
+                context.beginPath();
+                context.moveTo(80,80);
+                context.lineTo(200,100);
+                context.lineTo(100,200);
+
+                context.closePath();
+                context.strokeStyle='rgb(200,0,0)';
+                context.stroke();
+          
+
+
+            }else{
+                alert('브라우저가 캔버스를 지원하지 않습니다.')
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <!--넓이, 높이를 지정하지 않으면 기본값 넓이 300, 높이 150-->
+    <canvas id ="canvas" width ="500" height="500"></canvas>
+</body>
+</html>

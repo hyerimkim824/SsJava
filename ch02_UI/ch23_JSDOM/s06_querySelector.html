@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>querySelector()</title>
+
+    <script type ="text/javascript">
+        window.onload=function(){
+            let header1 = document.querySelector('#header_1');
+            let header2 = document.querySelector('#header_2');
+
+            header1.innerHTML ='하하';
+            header2.innerHTML ='호호';
+
+            //let input1 = document.querySelector('#my_form #input_1');
+            let input1 = document.querySelector('#input_1');
+            input1.value ='홍길동';
+
+            //CSS 선택자를 명시하면 어러개의 태그를 반환하는 상황에서도 
+            //querySelector는 같은 태그의 최상단의 태그만 접근 가능
+
+            let elem = document.querySelector('li');
+
+            //취득한 요소 노드의 style.backgroundColor 프로퍼티 값 변경
+            //elem.style.backgroundColor ='Yellow';
+
+            elems[0].style.background = 'yellow'; //배열로 인식
+
+            for(let i=0; i<elems.length;i++){
+                document.write(elems[i].innerHTML+'<br>');
+            }
+
+        }
+    </script>
+
+
+
+</head>
+<body>
+    <h1 id ="header_1">Header</h1>
+    <h1 id = "header_2">Header</h1>
+
+    <form id ="my_form">
+        <input type ="text" id ="input_1">
+
+    </form>
+
+    <ul>
+        <li>사과</li>
+        <li>바나나</li>
+        <li>오렌지</li>
+    </ul>
+
+    <script type ="text/javascript">
+        //ul 요소의 자식 요소인 li 요소를 모두 탐색하여 반환
+
+        const elems = document.querySelectorAll('ul>li');
+
+        document.write('------------------------<br>');
+        document.write(elems+'<br>')
+
+        /*
+        메서드 이름    설명
+        create
+        */
+    </script>
+    
+</body>
+</html>

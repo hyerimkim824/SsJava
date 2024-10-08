@@ -14,20 +14,14 @@ def plusftn(x):
 
 #make function for overlapped value of the list
 def deleteArray(x):
-    i=0
-    y=[]
-    while i<len(x):
-        #to search of overlapped value in the input list
-        for j in range(i+1,len(x)):
-            if x[i]==x[j]:
-                y.append(x[i])
-          
+    result = []
+    for i in x:
+        if i not in result:
+           result.append(i)
+           
+    return result
 
-        i+=1
-    for k in y:
-        #remove the value
-        x.remove(k)
-    return x
+
 
 #make function for arrangement
 def arr(a):
