@@ -1,6 +1,8 @@
 //Hye Rim Kim
 
+import java.security.KeyStore.Entry;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -35,7 +37,7 @@ class XYZMart{
 		return discount;
 	}
 
-	//make hashmap key : name, value : index
+	//make hashmap key : index, value : name
 	public void makeHash() {
 		
 		String[] d = this.discount;
@@ -49,28 +51,27 @@ class XYZMart{
 		
 		ArrayList<String> fullWant = new ArrayList<>();
 		ArrayList<Integer> numberList  = new ArrayList<>();
+		Collection<String> values = discountMap.values();
 		
-		Iterator<Integer> keys1 = discountMap.keySet().iterator();	
-		
+
 		for(int i=0; i<number.length;i++) {
 			for(int j =0; j< number[i];j++) {
 				fullWant.add(want[i]);
 			}
 			
 		}
-		
-		
-		while(keys1.hasNext()){
-			
-			int key1 = keys1.next();
-		
-
-			if(fullWant.contains(discountMap.get(key1))==true) {
-				numberList.add();
-			
+	
+		for(int i=0; i<fullWant.size();i++) {
+			String food = fullWant.get(i);
+	
+				for (int key : discountMap.keySet()) {
+			        if (discountMap.get(key) == food) {
+			            numberList.add(key);
+			        }
+			    }
+				
 			}
-			
-		}
+		
 		
 		
 		System.out.println(discountMap);
