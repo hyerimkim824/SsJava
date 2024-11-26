@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQeury를 이용한 비동기통신 구현</title>
+<script type = "text/javascript" src ="../js/jquery-3.7.1.min.js"></script>
+<script type ="text/javascript">
+	
+	$(function(){
+
+		$.ajax({
+			url:'myXML.jsp',
+			success:function(param){
+				$(param).find('person').each(function(){
+					let name = '<li>'+$(this).find('name').text()+'</li>';
+					let job ='<li>' +$(this).find('job').text()+'</li>';
+					let age ='<li>' +$(this).find('age').text()+'</li>';
+					
+					$('#output').append('<ul>'+name+job+age+'</ul>');
+				});		
+			}
+		});	
+	
+	});
+
+
+
+</script>
+
+</head>
+<body>
+	<div id="output"></div>
+</body>
+</html>
